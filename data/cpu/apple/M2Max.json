@@ -1,0 +1,109 @@
+{
+  "name": "Apple M2 Max",
+  "codename": "Rhodes Max",
+  "architecture": "ARMv8.5-A (Avalanche + Blizzard)",
+  "process_node": "TSMC 5 nm (N5P)",
+  "transistors": 67000000000,
+  "die_size_mm2": 432,
+  "package": "Apple M-Socket XL",
+  "launch_date": "2023-01-17",
+  "part_number": "APL1109",
+  "cores": {
+    "total": 12,
+    "performance_cores": 8,
+    "efficient_cores": 4,
+    "threads": 12
+  },
+  "clock": {
+    "base_p_core_ghz": 3.5,
+    "base_e_core_ghz": 2.4,
+    "max_boost_p_core_ghz": 3.7,
+    "max_boost_e_core_ghz": 2.4,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 192,
+    "l1_data_kb_per_p_core": 128,
+    "l1_instruction_kb_per_e_core": 128,
+    "l1_data_kb_per_e_core": 64,
+    "l2_mb_per_p_cluster": 48,
+    "l2_mb_per_e_cluster": 8,
+    "system_level_cache_mb": 48
+  },
+  "tdp": {
+    "cpu_only_w": 45,
+    "soc_total_w": 75
+  },
+  "temperature": {
+    "tjunction_max_c": 100
+  },
+  "memory": {
+    "type": "LPDDR5-6400",
+    "channels": 8,
+    "native_speed_mt_s": 6400,
+    "bus_width_bits": 512,
+    "max_capacity_gb": 96,
+    "bandwidth_gb_s": 409.6,
+    "unified_memory": true,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "4.0",
+    "lanes": 0,
+    "chip_internal_pcie4_lanes": 64
+  },
+  "integrated_graphics": {
+    "name": "Apple M2 Max GPU",
+    "architecture": "Apple custom",
+    "process_node": "TSMC 5 nm (N5P)",
+    "execution_units": 608,
+    "config_options": [30, 38],
+    "shaders": 4864,
+    "base_freq_ghz": 0.45,
+    "max_freq_ghz": 1.398,
+    "max_displays": 5,
+    "max_memory_gb": 64,
+    "flops_fp32": 13.6,
+    "texture_fillrate_gt_s": 679,
+    "api": {
+      "metal": 3,
+      "directx": null,
+      "opencl": 1.2,
+      "opengl": 4.1,
+      "vulkan": null
+    },
+    "video_engine": {
+      "h264_encode_decode": true,
+      "h265_encode_decode": true,
+      "prores_encode_decode": true,
+      "engines": {
+        "video_decode": 2,
+        "video_encode": 2,
+        "prores_encode_decode": 4
+      },
+      "av1_decode": false
+    }
+  },
+  "neural_engine": {
+    "cores": 16,
+    "tops_int8": 15.8,
+    "max_freq_ghz": 1.0
+  },
+  "features": [
+    "ARMv8.5-A ISA",
+    "Apple AMX matrix co-processor",
+    "Rosetta 2 translation layer",
+    "Secure Enclave",
+    "AES-256 encryption",
+    "SHA-2/3 acceleration",
+    "Secure Boot",
+    "Always-On Processor (AOP)"
+  ],
+  "chipset_compatibility": null,
+  "cooler_included": true,
+  "package_info": {
+    "soc_type": "PoP (Package-on-Package)",
+    "memory_stacked": true,
+    "package_height_mm": 1.5
+  }
+}

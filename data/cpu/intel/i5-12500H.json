@@ -1,0 +1,106 @@
+{
+    "name": "Intel Core i5-12500H",
+    "codename": "Alder Lake-H",
+    "architecture": "Hybrid (Performance-cores: Golden Cove / Efficient-cores: Gracemont)",
+    "process_node": "Intel 7 (10 nm ESF)",
+    "transistors": 17100000000,
+    "die_size_mm2": 217,
+    "socket": "FCBGA1744",
+    "launch_date": "2022-01-04",
+    "part_number": "FJ8071504827302",
+    "launch_price_usd": 320,
+    "cores": {
+        "total": 12,
+        "performance_cores": 4,
+        "efficient_cores": 8,
+        "threads": 16
+    },
+    "clock": {
+        "base_p_core_ghz": 2.5,
+        "base_e_core_ghz": 1.8,
+        "max_boost_p_core_single_ghz": 4.5,
+        "max_boost_p_core_all_ghz": 4.3,
+        "max_boost_e_core_ghz": 3.3,
+        "base_clock_mhz": 100,
+        "multiplier": 25,
+        "unlocked_multiplier": false
+    },
+    "cache": {
+        "l1_instruction_kb_per_p_core": 32,
+        "l1_data_kb_per_p_core": 48,
+        "l1_instruction_kb_per_e_core": 64,
+        "l1_data_kb_per_e_core": 32,
+        "l2_kb_per_p_core": 1280,
+        "l2_kb_per_e_cluster": 2048,
+        "l2_total_mb": 9.0,
+        "l3_mb_total": 18
+    },
+    "tdp": {
+        "base_w": 45,
+        "min_w": 35,
+        "max_w": 95
+    },
+    "temperature": {
+        "tjunction_max_c": 100
+    },
+    "memory": {
+        "type": "DDR5 / DDR4 / LPDDR5 / LPDDR4x",
+        "channels": 2,
+        "native_speed_ddr5_mt_s": 4800,
+        "native_speed_ddr4_mt_s": 3200,
+        "max_capacity_gb": 64,
+        "ecc": false,
+        "bandwidth_gb_s": 76.8
+    },
+    "pcie": {
+        "version": {
+            "cpu": "4.0",
+            "chipset": "3.0"
+        },
+        "lanes_cpu": 16,
+        "lanes_chipset": 12,
+        "bandwidth_cpu_gb_s": 31.5
+    },
+    "integrated_graphics": {
+        "name": "Intel Iris Xe Graphics (Alder Lake-H)",
+        "architecture": "Gen12 Xe-LP",
+        "process_node": "Intel 7 (10 nm ESF)",
+        "execution_units": 80,
+        "shaders": 640,
+        "base_freq_ghz": 0.4,
+        "max_freq_ghz": 1.5,
+        "max_displays": 4,
+        "max_memory_gb": 32,
+        "directx": "12.1",
+        "opencl": "3.0",
+        "av1_decode": true,
+        "h264_encode_decode": true,
+        "h265_encode_decode": true,
+        "vp8_encode_decode": true,
+        "vp9_encode_decode": true,
+        "jpeg_encode_decode": true
+    },
+    "features": [
+        "Intel Thread Director",
+        "Turbo Boost 3.0",
+        "Deep Learning Boost (VNNI)",
+        "AVX-512 (P-cores only)",
+        "AVX2",
+        "AES-NI",
+        "SHA Extensions",
+        "FMA3",
+        "BMI1",
+        "BMI2",
+        "Intel VT-x / VT-d",
+        "SGX",
+        "Speed Shift",
+        "Thermal Velocity Boost",
+        "Adaptix Dynamic Tuning"
+    ],
+    "chipset_compatibility": [
+        "HM670",
+        "WM690",
+        "QS670"
+    ],
+    "cooler_included": false
+}

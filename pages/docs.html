@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nucleus API Documentation | CPU/GPU JSON Data</title>
+    <style>
+        :root {
+            --primary: #6e48aa;
+            --secondary: #4776e6;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --code-bg: #f5f5f5;
+            --endpoint-method: #2ecc71;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background: var(--light);
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        h1 {
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+        }
+        .endpoint {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .method {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background: var(--endpoint-method);
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        pre {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+        .response-schema {
+            margin-top: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+        .note {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Nucleus API Documentation</h1>
+        <p><!--Version 1.0 | --><a href="/" style="color: #9e9eff;">Back to Home</a></p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="note">
+        <strong>Free Service:</strong> No API key required. Currently available without restrictions.
+    </div>
+
+    <section id="cpu-endpoint" class="endpoint">
+        <h2>CPU Endpoint</h2>
+        <p>Retrieve complete specifications for any CPU by brand and model.</p>
+
+        <div class="request">
+            <h3>Request</h3>
+            <p><span class="method">GET</span> <code>https://nucleus.api.qingyi-studio.top/cpu/{brand}/{model}</code></p>
+
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>brand</td>
+                    <td>string</td>
+                    <td>Manufacturer (e.g., "intel", "amd")</td>
+                </tr>
+                <tr>
+                    <td>model</td>
+                    <td>string</td>
+                    <td>CPU model number (e.g., "i5-12500H", "R9-7950x")</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="response">
+            <h3>Successful Response Example (Intel Core i5-12500H)</h3>
+            <p>URL: <code>https://nucleus.api.qingyi-studio.top/cpu/intel/i5-12500H</code></p>
+
+            <pre><code>{
+    "name": "Intel Core i5-12500H",
+    "codename": "Alder Lake-H",
+    "architecture": "Hybrid (Performance-cores: Golden Cove / Efficient-cores: Gracemont)",
+    "process_node": "Intel 7 (10 nm ESF)",
+    "transistors": 17100000000,
+    "die_size_mm2": 217,
+    "socket": "FCBGA1744",
+    "launch_date": "2022-01-04",
+    "part_number": "FJ8071504827302",
+    "launch_price_usd": 320,
+    "cores": {
+        "total": 12,
+        "performance_cores": 4,
+        "efficient_cores": 8,
+        "threads": 16
+    },
+    "clock": {
+        "base_p_core_ghz": 2.5,
+        "base_e_core_ghz": 1.8,
+        "max_boost_p_core_single_ghz": 4.5,
+        "max_boost_p_core_all_ghz": 4.3,
+        "max_boost_e_core_ghz": 3.3,
+        "base_clock_mhz": 100,
+        "multiplier": 25,
+        "unlocked_multiplier": false
+    },
+    "cache": {
+        "l1_instruction_kb_per_p_core": 32,
+        "l1_data_kb_per_p_core": 48,
+        "l1_instruction_kb_per_e_core": 64,
+        "l1_data_kb_per_e_core": 32,
+        "l2_kb_per_p_core": 1280,
+        "l2_kb_per_e_cluster": 2048,
+        "l2_total_mb": 9.0,
+        "l3_mb_total": 18
+    },
+    "tdp": {
+        "base_w": 45,
+        "min_w": 35,
+        "max_w": 95
+    },
+    "temperature": {
+        "tjunction_max_c": 100
+    },
+    "memory": {
+        "type": "DDR5 / DDR4 / LPDDR5 / LPDDR4x",
+        "channels": 2,
+        "native_speed_ddr5_mt_s": 4800,
+        "native_speed_ddr4_mt_s": 3200,
+        "max_capacity_gb": 64,
+        "ecc": false,
+        "bandwidth_gb_s": 76.8
+    },
+    "pcie": {
+        "version": {
+            "cpu": "4.0",
+            "chipset": "3.0"
+        },
+        "lanes_cpu": 16,
+        "lanes_chipset": 12,
+        "bandwidth_cpu_gb_s": 31.5
+    },
+    "integrated_graphics": {
+        "name": "Intel Iris Xe Graphics (Alder Lake-H)",
+        "architecture": "Gen12 Xe-LP",
+        "process_node": "Intel 7 (10 nm ESF)",
+        "execution_units": 80,
+        "shaders": 640,
+        "base_freq_ghz": 0.4,
+        "max_freq_ghz": 1.5,
+        "max_displays": 4,
+        "max_memory_gb": 32,
+        "directx": "12.1",
+        "opencl": "3.0",
+        "av1_decode": true,
+        "h264_encode_decode": true,
+        "h265_encode_decode": true,
+        "vp8_encode_decode": true,
+        "vp9_encode_decode": true,
+        "jpeg_encode_decode": true
+    },
+    "features": [
+        "Intel Thread Director",
+        "Turbo Boost 3.0",
+        "Deep Learning Boost (VNNI)",
+        "AVX-512 (P-cores only)",
+        "AVX2",
+        "AES-NI",
+        "SHA Extensions",
+        "FMA3",
+        "BMI1",
+        "BMI2",
+        "Intel VT-x / VT-d",
+        "SGX",
+        "Speed Shift",
+        "Thermal Velocity Boost",
+        "Adaptix Dynamic Tuning"
+    ],
+    "chipset_compatibility": [
+        "HM670",
+        "WM690",
+        "QS670"
+    ],
+    "cooler_included": false
+}</code></pre>
+        </div>
+    </section>
+
+    <section id="error-handling" class="endpoint">
+        <h2>Error Handling</h2>
+        <p>Your backend implements these exact error cases:</p>
+
+        <h3>1. CPU Not Found (404)</h3>
+        <p>Triggered when: <code>os.IsNotExist(err)</code></p>
+        <pre><code>HTTP/1.1 404 Not Found
+Content-Type: text/plain
+
+CPU information not found</code></pre>
+
+        <h3>2. File Read Error (500)</h3>
+        <p>Triggered when: <code>os.ReadFile</code> fails</p>
+        <pre><code>HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+
+Error reading CPU information</code></pre>
+
+        <h3>3. JSON Parse Error (500)</h3>
+        <p>Triggered when: <code>json.Unmarshal</code> fails</p>
+        <pre><code>HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+
+Error parsing CPU information</code></pre>
+
+        <!--
+        <div class="note">
+            <strong>Note:</strong> Current implementation returns plain text errors. Consider JSON error responses for better machine readability:
+            <pre><code>{
+  "error": {
+    "code": "not_found",
+    "message": "CPU information not found"
+  }
+}</code></pre>
+        </div>
+        -->
+    </section>
+
+    <section id="try-it">
+        <h2>Try It Out</h2>
+        <p>Test these live endpoints:</p>
+        <ul>
+            <li><a href="https://nucleus.api.qingyi-studio.top/cpu/intel/i5-12500H" target="_blank">Working example (i5-12500H)</a></li>
+            <li><a href="https://nucleus.api.qingyi-studio.top/cpu/intel/nonexistent" target="_blank">404 example</a></li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>© 2023 Nucleus API | <a href="/" style="color: #9e9eff;">Home</a></p>
+</footer>
+</body>
+</html>
