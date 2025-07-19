@@ -1,12 +1,12 @@
 package routes
 
 import (
-	"ComputerInfoAPI/handlers"
+	"NucleusAPI/handlers"
 
 	"github.com/gorilla/mux"
 )
 
-// RegisterCPURoutes 注册CPU相关路由
+// RegisterCPURoutes 注册CPU相关路由（带限流）
 func RegisterCPURoutes(router *mux.Router) {
 	cpuRouter := router.PathPrefix("/cpu").Subrouter()
 
