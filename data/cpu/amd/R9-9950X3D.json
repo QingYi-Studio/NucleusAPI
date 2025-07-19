@@ -1,0 +1,117 @@
+{
+    "name": "AMD Ryzen 9 9950X3D",
+    "codename": "Granite Ridge",
+    "architecture": "Zen 5",
+    "process_node": "TSMC 4 nm (N4P)",
+    "transistors": 16630000000,
+    "die_size_mm2": 141.2,
+    "socket": "AM5 (LGA 1718)",
+    "launch_date": "2025-01-06",
+    "part_number": "100-000000719",
+    "launch_price_usd": 699,
+    "cores": {
+        "total": 16,
+        "performance_cores": 16,
+        "efficient_cores": 0,
+        "threads": 32
+    },
+    "clock": {
+        "base_ghz": 4.3,
+        "max_boost_ghz": 5.7,
+        "base_clock_mhz": 100,
+        "multiplier": 43,
+        "unlocked_multiplier": true
+    },
+    "cache": {
+        "l1_instruction_kb_per_core": 32,
+        "l1_data_kb_per_core": 48,
+        "l1_total_kb_per_core": 80,
+        "l2_mb_total": 16,
+        "l2_mb_per_core": 1,
+        "l3_mb_total": 128,
+        "l3_mb_per_ccd": {
+            "ccd0": {
+                "base_l3_mb": 32,
+                "x3d_v_cache_mb": 64,
+                "total_mb": 96
+            },
+            "ccd1": {
+                "base_l3_mb": 32,
+                "x3d_v_cache_mb": 0,
+                "total_mb": 32
+            }
+        }
+    },
+    "tdp": {
+        "tdp_w": 170,
+        "ppt_w": 230
+    },
+    "temperature": {
+        "tjunction_max_c": 95
+    },
+    "memory": {
+        "type": "DDR5",
+        "channels": 2,
+        "native_speed_mt_s": 5600,
+        "max_overclock_mt_s": 8000,
+        "max_capacity_gb": 192,
+        "ecc": true,
+        "bandwidth_gb_s": 89.6
+    },
+    "pcie": {
+        "version": "5.0",
+        "lanes": 24,
+        "bandwidth_gb_s": 94.5
+    },
+    "integrated_graphics": {
+        "name": "AMD Radeon Graphics (Raphael)",
+        "architecture": "RDNA 2",
+        "process_node": "6 nm",
+        "compute_units": 2,
+        "shaders": 128,
+        "base_freq_ghz": 0.4,
+        "max_freq_ghz": 2.2,
+        "max_displays": 3,
+        "max_memory_gb": 8,
+        "directx": 12,
+        "av1_decode": true,
+        "h264_encode_decode": true,
+        "h265_encode_decode": true,
+        "vp8_encode_decode": true,
+        "vp9_encode_decode": true,
+        "jpeg_encode_decode": true
+    },
+    "features": [
+        "AMD 3D V-Cache (2nd Gen)",
+        "Precision Boost 2",
+        "Precision Boost Overdrive 2",
+        "Curve Optimizer",
+        "AMD EXPO",
+        "RAMP",
+        "AVX-512",
+        "AVX2",
+        "FMA3",
+        "AES-NI",
+        "SHA",
+        "BMI1",
+        "BMI2",
+        "F16C",
+        "SMT",
+        "AMD-V",
+        "SMAP",
+        "SMEP",
+        "EVP"
+    ],
+    "chipset_compatibility": [
+        "X870E",
+        "X870",
+        "B850",
+        "B840",
+        "X670E",
+        "X670",
+        "B650E",
+        "B650",
+        "A620"
+    ],
+    "cooler_included": false
+}

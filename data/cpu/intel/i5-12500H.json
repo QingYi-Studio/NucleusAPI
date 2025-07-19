@@ -1,0 +1,32 @@
+{
+    "name": "Intel Core i5-12500H",
+    "type": "Mobile Processor",
+    "core_count": 12,
+    "thread_count": 16,
+    "base_clock": 2.5,
+    "max_turbo_frequency": 4.5,
+    "cache": {
+        "l1": "192KB",
+        "l2": "1.25MB",
+        "l3": "18MB"
+    },
+    "memory_type": "DDR4-3200, DDR5-4800",
+    "graphics": {
+        "name": "Intel Iris Xe Graphics",
+        "base_frequency": 300,
+        "max_dynamic_frequency": 1.15
+    },
+    "tdp": 45,
+    "socket": "BGA1700",
+    "process_technology": "10nm",
+    "launch_date": "2022-01-04",
+    "features": [
+        "Hyper-Threading Technology",
+        "Intel Turbo Boost Max Technology 3.0",
+        "Intel Thread Director",
+        "Intel Thermal Velocity Boost",
+        "Intel Deep Learning Boost",
+        "Intel Speed Shift Technology",
+        "Intel Volume Management Device"
+    ]
+}
