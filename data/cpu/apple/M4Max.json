@@ -1,0 +1,113 @@
+{
+  "name": "Apple M4 Max",
+  "codename": "Palma Ultra",
+  "architecture": "ARMv9.4-A (Everest + Sawtooth)",
+  "process_node": "TSMC 3 nm (N3E)",
+  "transistors": 134000000000,
+  "die_size_mm2": 864,
+  "package": "Apple M-Socket XL",
+  "launch_date": "2024-10-30",
+  "part_number": "APL1204",
+  "cores": {
+    "total": 16,
+    "performance_cores": 12,
+    "efficient_cores": 4,
+    "threads": 16
+  },
+  "clock": {
+    "base_p_core_ghz": 4.51,
+    "base_e_core_ghz": 2.59,
+    "max_boost_p_core_ghz": 4.51,
+    "max_boost_e_core_ghz": 2.59,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 192,
+    "l1_data_kb_per_p_core": 128,
+    "l1_instruction_kb_per_e_core": 128,
+    "l1_data_kb_per_e_core": 64,
+    "l2_mb_per_p_cluster": 48,
+    "l2_mb_per_e_cluster": 8,
+    "system_level_cache_mb": 96
+  },
+  "tdp": {
+    "cpu_only_w": 90,
+    "soc_total_w": 110
+  },
+  "temperature": {
+    "tjunction_max_c": 100
+  },
+  "memory": {
+    "type": "LPDDR5X-8533",
+    "channels": 8,
+    "bus_width_bits": 512,
+    "max_capacity_gb": 128,
+    "bandwidth_gb_s": 546,
+    "unified_memory": true,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 0,
+    "chip_internal_pcie5_lanes": 64
+  },
+  "integrated_graphics": {
+    "name": "Apple M4 Max GPU",
+    "architecture": "Apple custom",
+    "process_node": "TSMC 3 nm (N3E)",
+    "execution_units": 640,
+    "config_options": [32, 40],
+    "shaders": 5120,
+    "base_freq_ghz": 0.5,
+    "max_freq_ghz": 1.8,
+    "max_displays": 4,
+    "max_memory_gb": 128,
+    "flops_fp32": 21.2,
+    "texture_fillrate_gt_s": 1324,
+    "api": {
+      "metal": 3,
+      "directx": null,
+      "opencl": 1.2,
+      "opengl": 4.1,
+      "vulkan": null
+    },
+    "video_engine": {
+      "h264_encode_decode": true,
+      "h265_encode_decode": true,
+      "prores_encode_decode": true,
+      "engines": {
+        "video_decode": 2,
+        "video_encode": 2,
+        "prores_encode_decode": 4
+      },
+      "av1_decode": true,
+      "av1_encode": false,
+      "ray_tracing": true,
+      "mesh_shading": true
+    }
+  },
+  "neural_engine": {
+    "cores": 16,
+    "tops_int8": 38,
+    "max_freq_ghz": 1.0
+  },
+  "features": [
+    "ARMv9.4-A ISA",
+    "Apple AMX matrix co-processor (3rd gen)",
+    "Rosetta 2 translation layer",
+    "Secure Enclave",
+    "AES-256 encryption",
+    "SHA-2/3 acceleration",
+    "Secure Boot",
+    "Always-On Processor (AOP)",
+    "Dynamic Caching GPU",
+    "Hardware-accelerated ray tracing"
+  ],
+  "chipset_compatibility": null,
+  "cooler_included": true,
+  "package_info": {
+    "soc_type": "CoWoS interposer + PoP",
+    "memory_stacked": true,
+    "package_height_mm": 1.3
+  }
+}
