@@ -1,0 +1,99 @@
+{
+  "name": "AMD Ryzen 9 9900X",
+  "codename": "Granite Ridge",
+  "architecture": "x86-64 (Zen 5)",
+  "process_node": {
+    "cpu_cores": "TSMC 4 nm N4P FinFET",
+    "io_die": "TSMC 6 nm FinFET"
+  },
+  "transistors": 16630000000,
+  "die_size_mm2": 141.2,
+  "package": "FC-LGA1718 (AM5)",
+  "launch_date": "2024-08-15",
+  "part_number": "100-000000662",
+  "launch_price_usd": 499,
+  "cores": {
+    "total": 12,
+    "performance_cores": 12,
+    "efficient_cores": 0,
+    "threads": 24
+  },
+  "clock": {
+    "base_ghz": 4.4,
+    "max_boost_ghz": 5.6,
+    "base_clock_mhz": 100,
+    "multiplier": 44,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 32,
+    "l1_data_kb_per_core": 48,
+    "l1_total_kb_per_core": 80,
+    "l2_mb_total": 12,
+    "l2_mb_per_core": 1,
+    "l3_mb_total": 64,
+    "l3_mb_shared": 64
+  },
+  "tdp": {
+    "tdp_w": 120,
+    "ppt_w": 162
+  },
+  "temperature": {
+    "tjunction_max_c": 95
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 5600,
+    "max_overclock_mt_s": 8000,
+    "channels": 2,
+    "max_capacity_gb": 192,
+    "ecc": true
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 24
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon Graphics (RDNA 2)",
+    "architecture": "RDNA 2",
+    "process_node": "6 nm",
+    "compute_units": 2,
+    "shaders": 128,
+    "base_freq_ghz": 0.4,
+    "max_freq_ghz": 2.2,
+    "max_displays": 3,
+    "max_memory_gb": 8,
+    "directx": 12
+  },
+  "features": [
+    "AMD Simultaneous Multithreading (SMT)",
+    "Precision Boost 2",
+    "Precision Boost Overdrive 2",
+    "Curve Optimizer",
+    "AMD EXPO",
+    "AVX-512",
+    "AVX2",
+    "AES-NI",
+    "SHA",
+    "FMA3",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "SMAP",
+    "SMEP",
+    "Secure Boot"
+  ],
+  "chipset_compatibility": [
+    "A620",
+    "B650",
+    "B650E",
+    "X670",
+    "X670E",
+    "B840",
+    "B850",
+    "X870",
+    "X870E"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "Liquid cooler (≥240 mm radiator)"
+}
