@@ -1,0 +1,93 @@
+{
+  "name": "AMD Ryzen 5 8400F",
+  "codename": "Phoenix 2",
+  "architecture": "x86-64 (Zen 4 + Zen 4c)",
+  "process_node": {
+    "cpu_cores": "TSMC 4 nm N4 FinFET",
+    "io_die": "TSMC 6 nm FinFET"
+  },
+  "transistors": 25000000000,
+  "die_size_mm2": 137,
+  "package": "FC-LGA1718 (AM5)",
+  "launch_date": "2024-04-01",
+  "part_number": "100-100001239",
+  "launch_price_usd": 149,
+  "cores": {
+    "total": 6,
+    "performance_cores": 2,
+    "efficient_cores": 4,
+    "threads": 12
+  },
+  "clock": {
+    "base_p_core_ghz": 4.1,
+    "base_e_core_ghz": 3.2,
+    "max_boost_p_core_ghz": 4.9,
+    "max_boost_e_core_ghz": 3.7,
+    "base_clock_mhz": 100,
+    "multiplier": 41,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 32,
+    "l1_data_kb_per_p_core": 48,
+    "l1_instruction_kb_per_e_core": 32,
+    "l1_data_kb_per_e_core": 32,
+    "l1_total_kb_per_p_core": 80,
+    "l1_total_kb_per_e_core": 64,
+    "l2_mb_total": 6,
+    "l2_mb_per_p_core": 1,
+    "l2_mb_per_e_core": 0.5,
+    "l3_mb_total": 16,
+    "l3_mb_shared": 16
+  },
+  "tdp": {
+    "tdp_w": 65,
+    "ppt_w": 88
+  },
+  "temperature": {
+    "tjunction_max_c": 95
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 5200,
+    "max_overclock_mt_s": 8000,
+    "channels": 2,
+    "max_capacity_gb": 256,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "4.0",
+    "lanes": 20
+  },
+  "integrated_graphics": null,
+  "features": [
+    "AMD Simultaneous Multithreading (SMT)",
+    "Precision Boost 2",
+    "Precision Boost Overdrive 2",
+    "Curve Optimizer",
+    "AMD EXPO",
+    "AVX2",
+    "AES-NI",
+    "SHA",
+    "FMA3",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "SMAP",
+    "SMEP",
+    "Secure Boot"
+  ],
+  "chipset_compatibility": [
+    "A620",
+    "B650",
+    "B650E",
+    "X670",
+    "X670E",
+    "B840",
+    "B850",
+    "X870",
+    "X870E"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Wraith Stealth or equivalent"
+}
