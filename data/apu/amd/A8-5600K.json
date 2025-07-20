@@ -1,0 +1,112 @@
+{
+  "name": "AMD A8-5600K",
+  "codename": "Trinity",
+  "architecture": "x86-64 (Piledriver)",
+  "process_node": {
+    "cpu_cores": "32 nm GlobalFoundries",
+    "io_die": "32 nm GlobalFoundries"
+  },
+  "transistors": 1303000000,
+  "die_size_mm2": 246,
+  "package": "µPGA-904 (FM2)",
+  "launch_date": "2012-10-02",
+  "part_number": ["AD560KWOA44HJ", "AD560KWOHJBOX"],
+  "launch_price_usd": 99,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 3.6,
+    "max_boost_ghz": 3.9,
+    "base_clock_mhz": 100,
+    "multiplier": 36,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_module": 64,
+    "l1_data_kb_per_core": 16,
+    "l1_total_kb_per_module": 192,
+    "l2_mb_total": 4,
+    "l2_mb_per_module": 2,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 100,
+    "ppt_w": 100
+  },
+  "temperature": {
+    "tjunction_max_c": 90,
+    "tcase_max_c": 74
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1866,
+    "max_overclock_mt_s": 2133,
+    "channels": 2,
+    "max_capacity_gb": 32,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon HD 7560D",
+    "architecture": "VLIW4 (Trinity-class IGP)",
+    "process_node": "32 nm",
+    "compute_units": 4,
+    "shaders": 256,
+    "base_freq_ghz": 0.76,
+    "max_freq_ghz": 0.76,
+    "max_displays": 2,
+    "max_memory_gb": 2,
+    "directx": 11,
+    "api": {
+      "directx": 11,
+      "opencl": 1.1,
+      "opengl": 4.1
+    },
+    "video_engine": {
+      "h264_decode": true,
+      "h264_encode": false,
+      "vc1_decode": true,
+      "mpeg2_decode": true
+    }
+  },
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4a",
+    "SSE4.1",
+    "SSE4.2",
+    "AVX",
+    "AES-NI",
+    "FMA3",
+    "FMA4",
+    "XOP",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "Turbo Core 3.0",
+    "PowerNow!"
+  ],
+  "chipset_compatibility": [
+    "A55",
+    "A68H",
+    "A75",
+    "A78",
+    "A85X",
+    "A88X"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Wraith Stealth (boxed)",
+  "production_status": "End-of-life"
+}

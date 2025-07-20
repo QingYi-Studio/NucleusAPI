@@ -10,6 +10,6 @@ import (
 func RegisterAPURoutes(router *mux.Router) {
 	apuRouter := router.PathPrefix("/apu").Subrouter()
 
-	apuRouter.HandleFunc("/amd/{model}", handlers.GetAMDCPUInfo).Methods("GET")
-	apuRouter.HandleFunc("/{model}", handlers.GetAMDCPUInfo).Methods("GET")
+	apuRouter.HandleFunc("/amd/{model}", handlers.GetAMDAPUInfo).Methods("GET")
+	apuRouter.HandleFunc("/{model}", handlers.GetAMDAPUInfo).Methods("GET")
 }

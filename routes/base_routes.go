@@ -36,8 +36,13 @@ func serveHTML(w http.ResponseWriter, filePath string) {
 		http.Error(w, "file not found: "+err.Error(), http.StatusNotFound)
 		return
 	}
-	defer f.Close()
+	defer func(f *os.File) {
+		err := f.Close()
+		if err != nil {
+			http.Error(w, "file close error: "+err.Error(), http.StatusInternalServerError)
+		}
+	}(f)
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	io.Copy(w, f)
+	_, _ = io.Copy(w, f)
 }

@@ -1,0 +1,118 @@
+{
+  "name": "AMD A6-7480",
+  "codename": "Carrizo",
+  "architecture": "x86-64 (Excavator)",
+  "process_node": {
+    "cpu_cores": "28 nm GlobalFoundries",
+    "io_die": "28 nm GlobalFoundries"
+  },
+  "transistors": 3100000000,
+  "die_size_mm2": 250,
+  "package": "µPGA-906 (FM2+)",
+  "launch_date": "2018-10-26",
+  "part_number": ["AD7480ACABBOX", "AD7480ACI23AB"],
+  "launch_price_usd": 40,
+  "cores": {
+    "total": 2,
+    "performance_cores": 2,
+    "efficient_cores": 0,
+    "threads": 2
+  },
+  "clock": {
+    "base_ghz": 3.5,
+    "max_boost_ghz": 3.8,
+    "base_clock_mhz": 100,
+    "multiplier": 35,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_module": 96,
+    "l1_data_kb_per_core": 32,
+    "l1_total_kb_per_module": 192,
+    "l2_mb_total": 1,
+    "l2_mb_per_module": 1,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 45,
+    "ppt_w": 45
+  },
+  "temperature": {
+    "tjunction_max_c": 90,
+    "tcase_max_c": 72
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 2133,
+    "max_overclock_mt_s": 2133,
+    "channels": 2,
+    "max_capacity_gb": 32,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "3.0",
+    "lanes": 16
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon R5 Graphics",
+    "architecture": "GCN 2 (Carrizo-class IGP)",
+    "process_node": "28 nm",
+    "compute_units": 4,
+    "shaders": 256,
+    "base_freq_ghz": 0.720,
+    "max_freq_ghz": 0.720,
+    "max_displays": 3,
+    "max_memory_gb": 2,
+    "directx": 12,
+    "api": {
+      "directx": 12,
+      "vulkan": 1.0,
+      "opencl": 1.2,
+      "opengl": 4.3
+    },
+    "video_engine": {
+      "h264_decode": true,
+      "h264_encode": true,
+      "vc1_decode": true,
+      "mpeg2_decode": true,
+      "uvd": 3,
+      "vce": 1.0
+    }
+  },
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4a",
+    "SSE4.1",
+    "SSE4.2",
+    "AES",
+    "AVX",
+    "AVX2",
+    "BMI1",
+    "BMI2",
+    "FMA3",
+    "FMA4",
+    "XOP",
+    "AMD-V",
+    "Turbo Core 3.0",
+    "TrueAudio",
+    "FreeSync",
+    "PowerNow!"
+  ],
+  "chipset_compatibility": [
+    "A55",
+    "A68H",
+    "A75",
+    "A78",
+    "A85X",
+    "A88X"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Wraith Stealth (boxed)",
+  "production_status": "Active"
+}

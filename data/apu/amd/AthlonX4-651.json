@@ -1,0 +1,75 @@
+{
+  "name": "AMD Athlon X4 651",
+  "codename": "Llano",
+  "architecture": "x86-64 (K10.5 / Husky)",
+  "process_node": {
+    "cpu_cores": "32 nm GlobalFoundries",
+    "io_die": "32 nm GlobalFoundries"
+  },
+  "transistors": 1178000000,
+  "die_size_mm2": 228,
+  "package": "µPGA-905 (FM1)",
+  "launch_date": "2011-11-14",
+  "part_number": ["AD651XWNZ43GX", "AD651XWNGXBOX"],
+  "launch_price_usd": 49,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 3.0,
+    "max_boost_ghz": 3.0,
+    "base_clock_mhz": 100,
+    "multiplier": 30,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 64,
+    "l1_data_kb_per_core": 64,
+    "l1_total_kb_per_core": 128,
+    "l2_mb_total": 4,
+    "l2_mb_per_core": 1,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 100,
+    "ppt_w": 100
+  },
+  "temperature": {
+    "tjunction_max_c": 70,
+    "tcase_max_c": 74
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1866,
+    "max_overclock_mt_s": 1866,
+    "channels": 2,
+    "max_capacity_gb": 32,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": null,
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSE4a",
+    "NX bit",
+    "AMD-V"
+  ],
+  "chipset_compatibility": [
+    "A55",
+    "A75"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "AMD boxed cooler (aluminum)",
+  "production_status": "End-of-life"
+}

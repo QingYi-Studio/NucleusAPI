@@ -1,0 +1,108 @@
+{
+  "name": "AMD Athlon X4 631",
+  "codename": "Kabini",
+  "architecture": "x86-64 (Jaguar)",
+  "process_node": "28 nm GlobalFoundries",
+  "transistors": 1200000000,
+  "die_size_mm2": 104,
+  "package": "µPGA-905 (FM2)",
+  "launch_date": "2013-06-01",
+  "part_number": ["AD631XGJZ23GK", "AD631XGJZ23GK"],
+  "launch_price_usd": 49,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 2.6,
+    "max_boost_ghz": 2.6,
+    "base_clock_mhz": 100,
+    "multiplier": 26,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 32,
+    "l1_data_kb_per_core": 16,
+    "l1_total_kb_per_core": 48,
+    "l2_mb_total": 2,
+    "l2_mb_per_core": 0.5,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 25,
+    "ppt_w": 25
+  },
+  "temperature": {
+    "tjunction_max_c": 90,
+    "tcase_max_c": 74
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1600,
+    "max_overclock_mt_s": 1600,
+    "channels": 2,
+    "max_capacity_gb": 32,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon HD 8280",
+    "architecture": "GCN 1 (Kabini-class IGP)",
+    "process_node": "28 nm",
+    "compute_units": 2,
+    "shaders": 128,
+    "base_freq_ghz": 0.500,
+    "max_freq_ghz": 0.500,
+    "max_displays": 2,
+    "max_memory_gb": 1,
+    "directx": 11,
+    "api": {
+      "directx": 11,
+      "opencl": 1.2,
+      "opengl": 4.3
+    },
+    "video_engine": {
+      "h264_decode": true,
+      "h264_encode": false,
+      "vc1_decode": true,
+      "mpeg2_decode": true
+    }
+  },
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4a",
+    "SSE4.1",
+    "SSE4.2",
+    "AVX",
+    "AES-NI",
+    "FMA3",
+    "FMA4",
+    "XOP",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "PowerNow!"
+  ],
+  "chipset_compatibility": [
+    "A55",
+    "A68H",
+    "A75",
+    "A78",
+    "A85X",
+    "A88X"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "AMD boxed cooler (aluminum)",
+  "production_status": "End-of-life"
+}
