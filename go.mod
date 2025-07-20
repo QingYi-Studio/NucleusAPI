@@ -1,4 +1,4 @@
-module ComputerInfoAPI
+module NucleusAPI
 
 go 1.24
 

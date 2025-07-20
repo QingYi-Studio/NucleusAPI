@@ -1,0 +1,116 @@
+{
+  "name": "AMD Ryzen 5 8500G",
+  "codename": "Phoenix 2",
+  "architecture": "x86-64 (Zen 4 + Zen 4c)",
+  "process_node": {
+    "cpu_cores": "TSMC 4 nm N4 FinFET",
+    "io_die": "TSMC 6 nm FinFET"
+  },
+  "transistors": 25000000000,
+  "die_size_mm2": 137,
+  "package": "FC-LGA1718 (AM5)",
+  "launch_date": "2024-01-08",
+  "part_number": "100-100001238",
+  "launch_price_usd": 179,
+  "cores": {
+    "total": 6,
+    "performance_cores": 2,
+    "efficient_cores": 4,
+    "threads": 12
+  },
+  "clock": {
+    "base_p_core_ghz": 4.1,
+    "base_e_core_ghz": 3.2,
+    "max_boost_p_core_ghz": 5.0,
+    "max_boost_e_core_ghz": 3.7,
+    "base_clock_mhz": 100,
+    "multiplier": 41,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 32,
+    "l1_data_kb_per_p_core": 48,
+    "l1_instruction_kb_per_e_core": 32,
+    "l1_data_kb_per_e_core": 32,
+    "l1_total_kb_per_p_core": 80,
+    "l1_total_kb_per_e_core": 64,
+    "l2_mb_total": 6,
+    "l2_mb_per_p_core": 1,
+    "l2_mb_per_e_core": 0.5,
+    "l3_mb_total": 16,
+    "l3_mb_shared": 16
+  },
+  "tdp": {
+    "tdp_w": 65,
+    "ppt_w": 88
+  },
+  "temperature": {
+    "tjunction_max_c": 95
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 5200,
+    "max_overclock_mt_s": 8000,
+    "channels": 2,
+    "max_capacity_gb": 256,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "4.0",
+    "lanes": 20
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon 740M",
+    "architecture": "RDNA 3",
+    "process_node": "4 nm",
+    "compute_units": 4,
+    "shaders": 256,
+    "base_freq_ghz": 0.8,
+    "max_freq_ghz": 2.8,
+    "max_displays": 3,
+    "max_memory_gb": 16,
+    "flops_fp32": 1.43,
+    "api": {
+      "directx": 12,
+      "vulkan": 1.3,
+      "opencl": 3.0,
+      "opengl": 4.6
+    },
+    "video_engine": {
+      "h264_encode_decode": true,
+      "h265_encode_decode": true,
+      "av1_encode_decode": true,
+      "vp9_decode": true
+    }
+  },
+  "features": [
+    "AMD Simultaneous Multithreading (SMT)",
+    "Precision Boost 2",
+    "Precision Boost Overdrive 2",
+    "Curve Optimizer",
+    "AMD EXPO",
+    "AVX2",
+    "AES-NI",
+    "SHA",
+    "FMA3",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "SMAP",
+    "SMEP",
+    "Secure Boot"
+  ],
+  "chipset_compatibility": [
+    "A620",
+    "B650",
+    "B650E",
+    "X670",
+    "X670E",
+    "B840",
+    "B850",
+    "X870",
+    "X870E"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Wraith Stealth"
+}

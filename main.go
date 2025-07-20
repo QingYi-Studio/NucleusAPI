@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ComputerInfoAPI/routes"
+	"NucleusAPI/routes"
 	"log"
 	"net/http"
 )

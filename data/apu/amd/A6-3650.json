@@ -1,0 +1,102 @@
+{
+  "name": "AMD A6-3650",
+  "codename": "Llano",
+  "architecture": "x86-64 (K10.5 / Husky)",
+  "process_node": {
+    "cpu_cores": "32 nm GlobalFoundries",
+    "io_die": "32 nm GlobalFoundries"
+  },
+  "transistors": 1178000000,
+  "die_size_mm2": 228,
+  "package": "µPGA-905 (FM1)",
+  "launch_date": "2011-06-30",
+  "part_number": ["AD3650WNZ43GX", "AD3650WNGXBOX"],
+  "launch_price_usd": 109,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 2.6,
+    "max_boost_ghz": 2.6,
+    "base_clock_mhz": 100,
+    "multiplier": 26,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 64,
+    "l1_data_kb_per_core": 64,
+    "l1_total_kb_per_core": 128,
+    "l2_mb_total": 4,
+    "l2_mb_per_core": 1,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 100,
+    "ppt_w": 100
+  },
+  "temperature": {
+    "tjunction_max_c": 100,
+    "tcase_max_c": 74
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1866,
+    "max_overclock_mt_s": 2133,
+    "channels": 2,
+    "max_capacity_gb": 32,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": {
+    "name": "AMD Radeon HD 6530D",
+    "architecture": "VLIW5 (Llano-class IGP)",
+    "process_node": "32 nm",
+    "compute_units": 5,
+    "shaders": 320,
+    "base_freq_ghz": 0.443,
+    "max_freq_ghz": 0.443,
+    "max_displays": 3,
+    "max_memory_gb": 1,
+    "directx": 11,
+    "api": {
+      "directx": 11,
+      "opencl": 1.1,
+      "opengl": 4.1
+    },
+    "video_engine": {
+      "h264_decode": true,
+      "h264_encode": false,
+      "vc1_decode": true,
+      "mpeg2_decode": true
+    }
+  },
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSE4a",
+    "SSE4.1",
+    "SSE4.2",
+    "AVX",
+    "AES-NI",
+    "AMD-V",
+    "PowerNow!"
+  ],
+  "chipset_compatibility": [
+    "A55",
+    "A75",
+    "A85X"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "AMD boxed cooler (aluminum)",
+  "production_status": "End-of-life"
+}

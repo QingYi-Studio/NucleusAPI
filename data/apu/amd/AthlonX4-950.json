@@ -1,0 +1,78 @@
+{
+  "name": "AMD Athlon X4 950",
+  "codename": "Bristol Ridge",
+  "architecture": "x86-64 (Excavator)",
+  "process_node": {
+    "cpu_cores": "28 nm GlobalFoundries",
+    "io_die": "28 nm GlobalFoundries"
+  },
+  "transistors": 3100000000,
+  "die_size_mm2": 246,
+  "package": "µOPGA-1331 (AM4)",
+  "launch_date": "2017-07-27",
+  "part_number": "AD950XAGM44AB",
+  "launch_price_usd": 59,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 3.5,
+    "max_boost_ghz": 3.8,
+    "base_clock_mhz": 100,
+    "multiplier": 35,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_module": 96,
+    "l1_data_kb_per_core": 32,
+    "l1_total_kb_per_module": 192,
+    "l2_mb_total": 2,
+    "l2_mb_per_module": 1,
+    "l3_mb_total": 0
+  },
+  "tdp": {
+    "tdp_w": 65,
+    "ppt_w": 65
+  },
+  "temperature": {
+    "tjunction_max_c": 90,
+    "tcase_max_c": 74
+  },
+  "memory": {
+    "type": "DDR4",
+    "native_speed_mt_s": 2400,
+    "max_overclock_mt_s": 2933,
+    "channels": 2,
+    "max_capacity_gb": 64,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "3.0",
+    "lanes": 8
+  },
+  "integrated_graphics": null,
+  "features": [
+    "AMD64 (x86-64)",
+    "MMX",
+    "SSE4.2",
+    "AVX",
+    "AVX2",
+    "AES-NI",
+    "FMA3",
+    "BMI1",
+    "BMI2",
+    "AMD-V",
+    "Turbo Core"
+  ],
+  "chipset_compatibility": [
+    "A320",
+    "B350",
+    "X370"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Wraith Stealth",
+  "production_status": "Discontinued"
+}
