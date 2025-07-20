@@ -13,9 +13,10 @@ func NewRouter() *mux.Router {
 	router.Use(middleware.EnableCORS)
 
 	// 注册各类路由
-	RegisterBaseRoutes(router) // 基础路由
-	RegisterCPURoutes(router)  // CPU路由
-	RegisterAPURoutes(router)  // APU路由
+	RegisterBaseRoutes(router)  // 基础路由
+	RegisterCPURoutes(router)   // CPU路由
+	RegisterAPURoutes(router)   // APU路由
+	RegisterIntelRoutes(router) // Intel路由
 
 	return router
 }
