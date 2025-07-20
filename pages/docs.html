@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nucleus API Documentation | CPU/GPU JSON Data</title>
+    <title>Nucleus API Documentation</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
     <style>
         :root {
             --primary: #6e48aa;
@@ -12,294 +13,1133 @@
             --light: #f8f9fa;
             --code-bg: #f5f5f5;
             --endpoint-method: #2ecc71;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --warning: #f39c12;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            background: var(--light);
             color: var(--dark);
             margin: 0;
             padding: 0;
-            background: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f8f9fa 0%, #eef2f7 100%);
         }
-        header {
-            background: var(--dark);
-            color: white;
-            padding: 2rem 0;
-        }
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        h1 {
-            margin: 0;
+
+        /* Header Styles */
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-size: 2.5rem;
+            margin: 0;
         }
-        .endpoint {
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 4px;
+            color: #bbb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        /* Hero Section */
+        .docs-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .docs-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                    radial-gradient(circle at 10% 20%, rgba(110, 72, 170, 0.1) 0%, transparent 20%),
+                    radial-gradient(circle at 90% 80%, rgba(71, 118, 230, 0.1) 0%, transparent 20%);
+            opacity: 0.8;
+        }
+
+        .docs-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .docs-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .docs-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(110, 72, 170, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(110, 72, 170, 0.6);
+        }
+
+        /* Documentation Content */
+        .docs-content {
+            display: flex;
+            gap: 40px;
+            padding: 4rem 0;
+        }
+
+        .docs-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .docs-main {
+            flex: 1;
+        }
+
+        .docs-card {
             background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
         }
+
+        .docs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .docs-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .docs-card h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .endpoint {
+            background: #f9fafb;
+            border-left: 4px solid var(--endpoint-method);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
         .method {
             display: inline-block;
-            padding: 0.3rem 0.6rem;
+            padding: 0.3rem 0.8rem;
             background: var(--endpoint-method);
             color: white;
-            border-radius: 3px;
+            border-radius: 4px;
             font-weight: bold;
             font-family: monospace;
             font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
-        pre {
-            background: var(--code-bg);
-            padding: 1rem;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        code {
+
+        .endpoint-url {
             font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            word-break: break-all;
+            background: var(--code-bg);
+            padding: 0.8rem;
+            border-radius: 4px;
         }
-        .response-schema {
-            margin-top: 1.5rem;
-        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
         }
+
         th, td {
-            padding: 0.75rem;
+            padding: 0.8rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e0e0e0;
         }
+
         th {
             background: #f2f2f2;
+            font-weight: 600;
         }
-        footer {
+
+        tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 1.5rem 0;
+        }
+
+        code {
+            font-family: inherit;
+        }
+
+        .json-key {
+            color: #c678dd;
+        }
+        .json-string {
+            color: #98c379;
+        }
+        .json-number {
+            color: #d19a66;
+        }
+        .json-boolean {
+            color: #56b6c2;
+        }
+        .json-null {
+            color: #56b6c2;
+        }
+
+        /* Hardware Icons */
+        .hardware-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 2rem 0;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 120px;
             text-align: center;
-            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .icon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .icon-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+        }
+
+        .sidebar-nav h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-list a {
+            display: block;
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            color: #555;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .nav-list a:hover {
+            background: #f0f4f8;
+            color: var(--primary);
+        }
+
+        .nav-list a.active {
+            background: rgba(110, 72, 170, 0.1);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
             background: var(--dark);
             color: white;
-            margin-top: 3rem;
+            padding: 3rem 0 2rem;
+            margin-top: auto;
         }
-        .note {
-            background: #e3f2fd;
-            padding: 1rem;
-            border-left: 4px solid var(--secondary);
-            margin: 1rem 0;
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .docs-content {
+                flex-direction: column;
+            }
+
+            .docs-sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .hardware-icons {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .docs-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .docs-hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .docs-hero {
+                padding: 3rem 0;
+            }
+
+            .docs-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+<!-- Header -->
 <header>
-    <div class="container">
-        <h1>Nucleus API Documentation</h1>
-        <p><!--Version 1.0 | --><a href="/" style="color: #9e9eff;">Back to Home</a></p>
+    <div class="container header-container">
+        <div class="logo">
+            <div class="logo-icon">N</div>
+            <div class="logo-text">
+                <h1>Nucleus API</h1>
+                <p>Hardware Specification Documentation</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#" class="active">Documentation</a></li>
+                <!--<li><a href="#footer">Contact</a></li>-->
+            </ul>
+        </nav>
     </div>
 </header>
 
-<div class="container">
-    <div class="note">
-        <strong>Free Service:</strong> No API key required. Currently available without restrictions.
+<!-- Hero Section -->
+<section class="docs-hero">
+    <div class="container">
+        <div class="docs-hero-content">
+            <h1>Nucleus API Documentation</h1>
+            <p>Comprehensive technical documentation for CPU, APU, GPU, NPU, and SoC specifications</p>
+        </div>
     </div>
+</section>
 
-    <section id="cpu-endpoint" class="endpoint">
-        <h2>CPU Endpoint</h2>
-        <p>Retrieve complete specifications for any CPU by brand and model.</p>
-
-        <div class="request">
-            <h3>Request</h3>
-            <p><span class="method">GET</span> <code>https://nucleus.api.qingyi-studio.top/cpu/{brand}/{model}</code></p>
-
-            <table>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>brand</td>
-                    <td>string</td>
-                    <td>Manufacturer (e.g., "intel", "amd")</td>
-                </tr>
-                <tr>
-                    <td>model</td>
-                    <td>string</td>
-                    <td>CPU model number (e.g., "i5-12500H", "R9-7950x")</td>
-                </tr>
-            </table>
+<!-- Hardware Types -->
+<div class="container">
+    <div class="hardware-icons">
+        <div class="icon-card">
+            <div class="icon">C</div>
+            <div class="icon-label">CPUs</div>
         </div>
-
-        <div class="response">
-            <h3>Successful Response Example (Intel Core i5-12500H)</h3>
-            <p>URL: <code>https://nucleus.api.qingyi-studio.top/cpu/intel/i5-12500H</code></p>
-
-            <pre><code>{
-    "name": "Intel Core i5-12500H",
-    "codename": "Alder Lake-H",
-    "architecture": "Hybrid (Performance-cores: Golden Cove / Efficient-cores: Gracemont)",
-    "process_node": "Intel 7 (10 nm ESF)",
-    "transistors": 17100000000,
-    "die_size_mm2": 217,
-    "socket": "FCBGA1744",
-    "launch_date": "2022-01-04",
-    "part_number": "FJ8071504827302",
-    "launch_price_usd": 320,
-    "cores": {
-        "total": 12,
-        "performance_cores": 4,
-        "efficient_cores": 8,
-        "threads": 16
-    },
-    "clock": {
-        "base_p_core_ghz": 2.5,
-        "base_e_core_ghz": 1.8,
-        "max_boost_p_core_single_ghz": 4.5,
-        "max_boost_p_core_all_ghz": 4.3,
-        "max_boost_e_core_ghz": 3.3,
-        "base_clock_mhz": 100,
-        "multiplier": 25,
-        "unlocked_multiplier": false
-    },
-    "cache": {
-        "l1_instruction_kb_per_p_core": 32,
-        "l1_data_kb_per_p_core": 48,
-        "l1_instruction_kb_per_e_core": 64,
-        "l1_data_kb_per_e_core": 32,
-        "l2_kb_per_p_core": 1280,
-        "l2_kb_per_e_cluster": 2048,
-        "l2_total_mb": 9.0,
-        "l3_mb_total": 18
-    },
-    "tdp": {
-        "base_w": 45,
-        "min_w": 35,
-        "max_w": 95
-    },
-    "temperature": {
-        "tjunction_max_c": 100
-    },
-    "memory": {
-        "type": "DDR5 / DDR4 / LPDDR5 / LPDDR4x",
-        "channels": 2,
-        "native_speed_ddr5_mt_s": 4800,
-        "native_speed_ddr4_mt_s": 3200,
-        "max_capacity_gb": 64,
-        "ecc": false,
-        "bandwidth_gb_s": 76.8
-    },
-    "pcie": {
-        "version": {
-            "cpu": "4.0",
-            "chipset": "3.0"
-        },
-        "lanes_cpu": 16,
-        "lanes_chipset": 12,
-        "bandwidth_cpu_gb_s": 31.5
-    },
-    "integrated_graphics": {
-        "name": "Intel Iris Xe Graphics (Alder Lake-H)",
-        "architecture": "Gen12 Xe-LP",
-        "process_node": "Intel 7 (10 nm ESF)",
-        "execution_units": 80,
-        "shaders": 640,
-        "base_freq_ghz": 0.4,
-        "max_freq_ghz": 1.5,
-        "max_displays": 4,
-        "max_memory_gb": 32,
-        "directx": "12.1",
-        "opencl": "3.0",
-        "av1_decode": true,
-        "h264_encode_decode": true,
-        "h265_encode_decode": true,
-        "vp8_encode_decode": true,
-        "vp9_encode_decode": true,
-        "jpeg_encode_decode": true
-    },
-    "features": [
-        "Intel Thread Director",
-        "Turbo Boost 3.0",
-        "Deep Learning Boost (VNNI)",
-        "AVX-512 (P-cores only)",
-        "AVX2",
-        "AES-NI",
-        "SHA Extensions",
-        "FMA3",
-        "BMI1",
-        "BMI2",
-        "Intel VT-x / VT-d",
-        "SGX",
-        "Speed Shift",
-        "Thermal Velocity Boost",
-        "Adaptix Dynamic Tuning"
-    ],
-    "chipset_compatibility": [
-        "HM670",
-        "WM690",
-        "QS670"
-    ],
-    "cooler_included": false
-}</code></pre>
+        <div class="icon-card">
+            <div class="icon">A</div>
+            <div class="icon-label">APUs</div>
         </div>
-    </section>
-
-    <section id="error-handling" class="endpoint">
-        <h2>Error Handling</h2>
-        <p>Your backend implements these exact error cases:</p>
-
-        <h3>1. CPU Not Found (404)</h3>
-        <p>Triggered when: <code>os.IsNotExist(err)</code></p>
-        <pre><code>HTTP/1.1 404 Not Found
-Content-Type: text/plain
-
-CPU information not found</code></pre>
-
-        <h3>2. File Read Error (500)</h3>
-        <p>Triggered when: <code>os.ReadFile</code> fails</p>
-        <pre><code>HTTP/1.1 500 Internal Server Error
-Content-Type: text/plain
-
-Error reading CPU information</code></pre>
-
-        <h3>3. JSON Parse Error (500)</h3>
-        <p>Triggered when: <code>json.Unmarshal</code> fails</p>
-        <pre><code>HTTP/1.1 500 Internal Server Error
-Content-Type: text/plain
-
-Error parsing CPU information</code></pre>
-
-        <!--
-        <div class="note">
-            <strong>Note:</strong> Current implementation returns plain text errors. Consider JSON error responses for better machine readability:
-            <pre><code>{
-  "error": {
-    "code": "not_found",
-    "message": "CPU information not found"
-  }
-}</code></pre>
+        <div class="icon-card">
+            <div class="icon">G</div>
+            <div class="icon-label">GPUs</div>
         </div>
-        -->
-    </section>
-
-    <section id="try-it">
-        <h2>Try It Out</h2>
-        <p>Test these live endpoints:</p>
-        <ul>
-            <li><a href="https://nucleus.api.qingyi-studio.top/cpu/intel/i5-12500H" target="_blank">Working example (i5-12500H)</a></li>
-            <li><a href="https://nucleus.api.qingyi-studio.top/cpu/intel/nonexistent" target="_blank">404 example</a></li>
-        </ul>
-    </section>
+        <div class="icon-card">
+            <div class="icon">N</div>
+            <div class="icon-label">NPUs</div>
+        </div>
+        <div class="icon-card">
+            <div class="icon">S</div>
+            <div class="icon-label">SoCs</div>
+        </div>
+    </div>
 </div>
 
-<footer>
-    <p>© 2023 Nucleus API | <a href="/" style="color: #9e9eff;">Home</a></p>
+<!-- Documentation Content -->
+<div class="container">
+    <div class="docs-content">
+        <!-- Sidebar Navigation -->
+        <div class="docs-sidebar">
+            <div class="sidebar-nav">
+                <h3>Documentation</h3>
+                <ul class="nav-list">
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#authentication">Authentication</a></li>
+                    <li><a href="#rate-limiting">Rate Limiting</a></li>
+                    <li><a href="#endpoints">Endpoints Overview</a></li>
+                    <li><a href="#cpu-endpoint">CPU Endpoint</a></li>
+                    <li><a href="#apu-endpoint">APU Endpoint</a></li>
+                    <li><a href="#gpu-endpoint">GPU Endpoint</a></li>
+                    <li><a href="#npu-endpoint">NPU Endpoint</a></li>
+                    <li><a href="#soc-endpoint">SoC Endpoint</a></li>
+                    <li><a href="#error-handling">Error Handling</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="docs-main">
+            <!-- Introduction Section -->
+            <div class="docs-card" id="introduction">
+                <h2>Introduction</h2>
+                <p>Nucleus API provides comprehensive hardware specifications for various processing units including CPUs, APUs, GPUs, NPUs, and SoCs. All data is provided in JSON format for easy integration into applications.</p>
+                <p>Our API is completely free and requires no authentication, with CORS support enabled for frontend applications.</p>
+            </div>
+
+            <!-- Authentication Section -->
+            <div class="docs-card" id="authentication">
+                <h2>Authentication</h2>
+                <p>Currently, Nucleus API <strong>requires no authentication</strong>, and all endpoints are publicly accessible.</p>
+                <div class="endpoint">
+                    <div class="method">No Authentication Required</div>
+                    <p>All endpoints can be accessed directly without any API keys or authentication tokens.</p>
+                </div>
+            </div>
+
+            <!-- Rate Limiting Section -->
+            <div class="docs-card" id="rate-limiting">
+                <h2>Rate Limiting</h2>
+                <p>To ensure service stability, we enforce the following rate limits:</p>
+                <ul>
+                    <li><strong>Per minute:</strong> 60 requests</li>
+                    <li><strong>Per hour:</strong> 1,000 requests</li>
+                </ul>
+                <p>If you exceed these limits, you will receive a <code>429 Too Many Requests</code> response.</p>
+            </div>
+
+            <!-- Endpoints Overview -->
+            <div class="docs-card" id="endpoints">
+                <h2>Endpoints Overview</h2>
+                <p>All endpoints follow the same base structure:</p>
+                <pre><code>https://nucleus.api.qingyi-studio.top/{hardware_type}/{brand}/{model}</code></pre>
+
+                <h3>Supported Hardware Types</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Hardware Type</th>
+                        <th>Path</th>
+                        <th>Example</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Central Processing Unit</td>
+                        <td><code>/cpu</code></td>
+                        <td><code>/cpu/intel/i5-12500H</code></td>
+                    </tr>
+                    <tr>
+                        <td>Accelerated Processing Unit</td>
+                        <td><code>/apu</code></td>
+                        <td><code>/apu/amd/A12-9800</code></td>
+                    </tr>
+                    <tr>
+                        <td>Graphics Processing Unit</td>
+                        <td><code>/gpu</code></td>
+                        <td><code>/gpu/nvidia/rtx4090</code></td>
+                    </tr>
+                    <tr>
+                        <td>Neural Processing Unit</td>
+                        <td><code>/npu</code></td>
+                        <td><code>/npu/apple/a16</code></td>
+                    </tr>
+                    <tr>
+                        <td>System on Chip</td>
+                        <td><code>/soc</code></td>
+                        <td><code>/soc/qualcomm/snapdragon-8-gen2</code></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CPU Endpoint -->
+            <div class="docs-card" id="cpu-endpoint">
+                <h2>CPU Endpoint</h2>
+                <p>Retrieve detailed specifications for Central Processing Units (CPUs).</p>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <div class="endpoint-url">https://nucleus.api.qingyi-studio.top/cpu/{brand}/{model}</div>
+
+                    <h3>Path Parameters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>brand</td>
+                            <td>string</td>
+                            <td>Manufacturer (e.g., intel, amd, apple)</td>
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>string</td>
+                            <td>CPU model (e.g., i5-12500H, R9-7950X, M1)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response Example</h3>
+                    <pre><code>{
+  "name": "Intel Core i5-12500H",
+  "codename": "Alder Lake-H",
+  "architecture": "Hybrid (Performance-cores: Golden Cove / Efficient-cores: Gracemont)",
+  "process_node": "Intel 7 (10 nm ESF)",
+  "transistors": 17100000000,
+  "die_size_mm2": 217,
+  "socket": "FCBGA1744",
+  "launch_date": "2022-01-04",
+  "part_number": "FJ8071504827302",
+  "launch_price_usd": 320,
+  "cores": {
+    "total": 12,
+    "performance_cores": 4,
+    "efficient_cores": 8,
+    "threads": 16
+  },
+  "clock": {
+    "base_p_core_ghz": 2.5,
+    "base_e_core_ghz": 1.8,
+    "max_boost_p_core_single_ghz": 4.5,
+    "max_boost_p_core_all_ghz": 4.3,
+    "max_boost_e_core_ghz": 3.3
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 32,
+    "l1_data_kb_per_p_core": 48,
+    "l1_instruction_kb_per_e_core": 64,
+    "l1_data_kb_per_e_core": 32,
+    "l2_kb_per_p_core": 1280,
+    "l2_kb_per_e_cluster": 2048,
+    "l2_total_mb": 9.0,
+    "l3_mb_total": 18
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- APU Endpoint -->
+            <div class="docs-card" id="apu-endpoint">
+                <h2>APU Endpoint</h2>
+                <p>Retrieve detailed specifications for Accelerated Processing Units (APUs).</p>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <div class="endpoint-url">https://nucleus.api.qingyi-studio.top/apu/{brand}/{model}</div>
+
+                    <h3>Path Parameters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>brand</td>
+                            <td>string</td>
+                            <td>Manufacturer (currently only amd supported)</td>
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>string</td>
+                            <td>APU model (e.g., A12-9800, Ryzen-7-5700G)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response Example</h3>
+                    <pre><code>{
+  "name": "AMD A12-9800",
+  "codename": "Bristol Ridge",
+  "architecture": "Excavator",
+  "process_node": {
+    "cpu_cores": "28nm",
+    "io_die": "55nm"
+  },
+  "transistors": 3100000000,
+  "die_size_mm2": 250,
+  "package": "AM4",
+  "launch_date": "2016-07-27",
+  "part_number": "AD9800AUABBOX",
+  "launch_price_usd": 99,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 4
+  },
+  "clock": {
+    "base_ghz": 3.8,
+    "max_boost_ghz": 4.2
+  },
+  "integrated_graphics": {
+    "name": "Radeon R7",
+    "cores": 8,
+    "base_freq_ghz": 1.108
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- GPU Endpoint -->
+            <div class="docs-card" id="gpu-endpoint">
+                <h2>GPU Endpoint</h2>
+                <p>Retrieve detailed specifications for Graphics Processing Units (GPUs).</p>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <div class="endpoint-url">https://nucleus.api.qingyi-studio.top/gpu/{brand}/{model}</div>
+
+                    <h3>Path Parameters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>brand</td>
+                            <td>string</td>
+                            <td>Manufacturer (e.g., nvidia, amd, intel)</td>
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>string</td>
+                            <td>GPU model (e.g., rtx4090, rx7900xt, arc-a770)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response Example</h3>
+                    <pre><code>{
+  "name": "NVIDIA GeForce RTX 4090",
+  "architecture": "Ada Lovelace",
+  "process_node": "TSMC 4N",
+  "transistors": 76300000000,
+  "die_size_mm2": 608.5,
+  "base_clock_mhz": 2235,
+  "boost_clock_mhz": 2520,
+  "memory": {
+    "type": "GDDR6X",
+    "size_gb": 24,
+    "bus_width_bit": 384,
+    "speed_gbps": 21
+  },
+  "cuda_cores": 16384,
+  "rt_cores": 128,
+  "tensor_cores": 512,
+  "tgp_w": 450,
+  "features": [
+    "DLSS 3",
+    "NVIDIA Reflex",
+    "AV1 Encoding"
+  ]
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- NPU Endpoint -->
+            <div class="docs-card" id="npu-endpoint">
+                <h2>NPU Endpoint</h2>
+                <p>Retrieve detailed specifications for Neural Processing Units (NPUs).</p>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <div class="endpoint-url">https://nucleus.api.qingyi-studio.top/npu/{brand}/{model}</div>
+
+                    <h3>Path Parameters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>brand</td>
+                            <td>string</td>
+                            <td>Manufacturer (e.g., apple, qualcomm, intel)</td>
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>string</td>
+                            <td>NPU model (e.g., a16, hexagon, movidius)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response Example</h3>
+                    <pre><code>{
+  "name": "Apple Neural Engine (A16)",
+  "architecture": "16-core",
+  "process_node": "TSMC 4nm",
+  "performance": "17 TOPS",
+  "memory_bandwidth": "34.1 GB/s",
+  "features": [
+    "Real-time machine learning",
+    "Camera processing",
+    "Speech recognition",
+    "Image processing"
+  ],
+  "applications": [
+    "Face ID",
+    "Siri",
+    "Augmented Reality",
+    "Computational Photography"
+  ]
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- SoC Endpoint -->
+            <div class="docs-card" id="soc-endpoint">
+                <h2>SoC Endpoint</h2>
+                <p>Retrieve detailed specifications for Systems on Chip (SoCs).</p>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <div class="endpoint-url">https://nucleus.api.qingyi-studio.top/soc/{brand}/{model}</div>
+
+                    <h3>Path Parameters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>brand</td>
+                            <td>string</td>
+                            <td>Manufacturer (e.g., qualcomm, apple, mediatek)</td>
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>string</td>
+                            <td>SoC model (e.g., snapdragon-8-gen2, a16-bionic, dimensity-9200)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response Example</h3>
+                    <pre><code>{
+  "name": "Qualcomm Snapdragon 8 Gen 2",
+  "codename": "SM8550-AB",
+  "architecture": "1+4+3 (Cortex-X3, A715, A510)",
+  "process_node": "TSMC 4nm",
+  "transistors": "16.7 Billion",
+  "cpu": {
+    "prime_core": "1x Cortex-X3 @ 3.2 GHz",
+    "performance_cores": "4x Cortex-A715 @ 2.8 GHz",
+    "efficiency_cores": "3x Cortex-A510 @ 2.0 GHz"
+  },
+  "gpu": "Adreno 740",
+  "dsp": "Hexagon",
+  "ai_performance": "60 TOPS",
+  "modem": "Snapdragon X70 5G",
+  "memory_support": "LPDDR5X @ 4200 MHz",
+  "storage_support": "UFS 4.0",
+  "imaging": "Spectra ISP (200MP photo, 8K HDR video)"
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- Error Handling -->
+            <div class="docs-card" id="error-handling">
+                <h2>Error Handling</h2>
+                <p>All errors are returned in JSON format with error codes and descriptions.</p>
+
+                <h3>Common Error Responses</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>HTTP Status Code</th>
+                        <th>Error Code</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>404 Not Found</td>
+                        <td>not_found</td>
+                        <td>Requested hardware information not found</td>
+                    </tr>
+                    <tr>
+                        <td>500 Internal Server Error</td>
+                        <td>server_error</td>
+                        <td>Internal server error</td>
+                    </tr>
+                    <tr>
+                        <td>400 Bad Request</td>
+                        <td>invalid_request</td>
+                        <td>Invalid request parameters</td>
+                    </tr>
+                    <tr>
+                        <td>429 Too Many Requests</td>
+                        <td>rate_limit_exceeded</td>
+                        <td>Request rate limit exceeded</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3>Error Response Example</h3>
+                <pre><code>{
+  "error": {
+    "code": "not_found",
+    "message": "CPU information not found",
+    "details": {
+      "brand": "intel",
+      "model": "i9-99999K"
+    }
+  }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Nucleus API</h3>
+                <p>Providing comprehensive hardware specifications for developers and engineers.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">API Documentation</a></li>
+                    <li><a href="#">GitHub Repository</a></li>
+                    <li><a href="#">Data Schemas</a></li>
+                    <li><a href="#">Contribution Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Issue Tracker</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">License</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Data Sources</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2023 Nucleus API | Open Source Project | Apache License 2.0</p>
+        </div>
+    </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav
+                    document.querySelectorAll('.nav-list a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.docs-card');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (window.pageYOffset >= (sectionTop - 150)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-list a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
