@@ -1,0 +1,90 @@
+{
+  "name": "小米玄戒O1 (XringO1)",
+  "codename": "玄戒O1",
+  "architecture": "ARMv9 (Cortex-X925/A725/A520)",
+  "process_node": "TSMC 3nm N3E FinFET",
+  "transistors": 19000000000,
+  "die_size_mm2": 109,
+  "package": "BGA (移动SoC封装)",
+  "launch_date": "2025-05-22",
+  "part_number": "未公开",
+  "launch_price_usd": "N/A (集成于设备)",
+  "cores": {
+    "total": 10,
+    "performance_cores": 6,
+    "efficient_cores": 4,
+    "threads": "未明确 (推测10线程)"
+  },
+  "clock": {
+    "base_ghz": {
+      "x925": 3.9,
+      "a725_high": 3.4,
+      "a725_low": 1.9,
+      "a520": 1.8
+    },
+    "max_boost_ghz": "未明确 (动态调频)",
+    "base_clock_mhz": "N/A (移动SoC)",
+    "multiplier": "N/A (ARM架构)"
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": "未明确 (ARM标准架构)",
+    "l1_data_kb_per_core": "未明确",
+    "l1_total_kb_per_core": "未明确",
+    "l2_mb_total": "未明确 (可能共享式设计)",
+    "l2_mb_per_core": "未明确",
+    "l3_mb_total": "未明确 (优化AI/影像缓存)"
+  },
+  "tdp": {
+    "tdp_w": "未明确 (移动SoC，优化能效)",
+    "ppt_w": "N/A"
+  },
+  "temperature": {
+    "tjunction_max_c": "未明确 (手机散热优化)"
+  },
+  "memory": {
+    "type": "LPDDR5X",
+    "native_speed_mt_s": "未明确 (优化能效)",
+    "max_overclock_mt_s": "N/A",
+    "channels": "未明确",
+    "max_capacity_gb": "未明确 (适配手机/平板)",
+    "ecc": false
+  },
+  "pcie": {
+    "version": "N/A (移动SoC)",
+    "lanes": "N/A"
+  },
+  "integrated_graphics": {
+    "name": "Arm Immortalis-G925",
+    "architecture": "ARM Mali (Immortalis-G925)",
+    "process_node": "3nm",
+    "compute_units": 16,
+    "shaders": "未明确 (16核GPU)",
+    "base_freq_ghz": "未明确",
+    "max_freq_ghz": "未明确",
+    "max_displays": "未明确 (支持多屏协同)",
+    "max_memory_gb": "共享系统内存",
+    "directx": "N/A"
+  },
+  "features": [
+    "十核四丛集CPU架构",
+    "Arm Cortex-X925超大核",
+    "Immortalis-G925 GPU",
+    "小米第四代ISP影像处理器",
+    "三段式影像处理管线",
+    "AI NPU (44 TOPS算力)",
+    "UWB超宽带技术",
+    "Wi-Fi 7",
+    "蓝牙5.4",
+    "动态核心调度技术",
+    "低功耗优化",
+    "端侧AI加速",
+    "小米HyperOS深度优化"
+  ],
+  "chipset_compatibility": [
+    "小米15S Pro",
+    "小米平板7 Ultra",
+    "小米平板7S Pro"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "翼型环形冷泵Pro散热系统 (手机/平板内置)"
+}
