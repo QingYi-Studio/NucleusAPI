@@ -1,0 +1,98 @@
+{
+  "name": "Intel Xeon W5-3435X",
+  "codename": "Sapphire Rapids",
+  "architecture": "x86-64",
+  "process_node": "Intel 7",
+  "transistors": "Unknown",
+  "die_size_mm2": "4x 477",
+  "package": "FCLGA4677",
+  "launch_date": "2023-02-15",
+  "part_number": "SRM34",
+  "launch_price_usd": 1589,
+  "cores": {
+    "total": 16,
+    "performance_cores": 16,
+    "efficient_cores": 0,
+    "threads": 32
+  },
+  "clock": {
+    "base_ghz": 3.1,
+    "max_boost_ghz": 4.7,
+    "base_clock_mhz": 100,
+    "multiplier": 31.0,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 80,
+    "l1_data_kb_per_core": 80,
+    "l1_total_kb_per_core": 160,
+    "l2_mb_total": 32,
+    "l2_mb_per_core": 2,
+    "l3_mb_total": 45
+  },
+  "tdp": {
+    "tdp_w": 270,
+    "ppt_w": 324
+  },
+  "temperature": {
+    "tjunction_max_c": 94,
+    "tcase_max_c": 72
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 4800,
+    "max_capacity_gb": 4096,
+    "channels": 8,
+    "bandwidth_gb_s": 307.2,
+    "ecc": true
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 112
+  },
+  "integrated_graphics": null,
+  "features": [
+    "MMX",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4.1",
+    "SSE4.2",
+    "AVX",
+    "AVX2",
+    "AVX-512",
+    "AVX-VNNI",
+    "FMA3",
+    "SHA",
+    "EIST",
+    "Intel 64",
+    "XD bit",
+    "VT-x",
+    "VT-d",
+    "AES-NI",
+    "TSX",
+    "TXT",
+    "CLMUL",
+    "F16C",
+    "BMI1",
+    "BMI2",
+    "ABM",
+    "ADX",
+    "AMX",
+    "RdRand",
+    "5-level NPT",
+    "X2APIC",
+    "Intel DSA",
+    "DLBoost 2.0",
+    "vPro",
+    "TBT 2.0",
+    "TBT 3.0"
+  ],
+  "chipset_compatibility": [
+    "W790"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "High-end liquid cooling solution",
+  "production_status": "Active"
+}

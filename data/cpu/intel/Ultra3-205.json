@@ -1,0 +1,113 @@
+{
+  "name": "Intel Core Ultra 3 205",
+  "codename": "Arrow Lake-S",
+  "architecture": "Hybrid (Lion Cove + Skymont)",
+  "process_node": "Intel 20A (2 nm EUV)",
+  "transistors": "Unknown",
+  "die_size_mm2": "Unknown",
+  "package": "LGA-1851",
+  "launch_date": "2025-Q1",
+  "part_number": "Ultra3-205",
+  "launch_price_usd": 109,
+  "cores": {
+    "total": 8,
+    "performance_cores": 4,
+    "efficient_cores": 4,
+    "threads": 8
+  },
+  "clock": {
+    "base_p_core_ghz": 3.9,
+    "base_e_core_ghz": 3.3,
+    "max_boost_p_core_single_ghz": 4.8,
+    "max_boost_p_core_all_ghz": 4.7,
+    "max_boost_e_core_single_ghz": 4.2,
+    "max_boost_e_core_all_ghz": 4.2,
+    "base_clock_mhz": 100,
+    "multiplier": "Locked",
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 80,
+    "l1_data_kb_per_p_core": 80,
+    "l1_instruction_kb_per_e_core": 48,
+    "l1_data_kb_per_e_core": 32,
+    "l2_mb_total": 12,
+    "l2_mb_per_p_cluster": 9,
+    "l2_mb_per_e_cluster": 3,
+    "l3_mb_total": 15
+  },
+  "tdp": {
+    "tdp_w": 65,
+    "ppt_w": 65
+  },
+  "temperature": {
+    "tjunction_max_c": 100
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 5600,
+    "max_capacity_gb": 192,
+    "channels": 2,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 16
+  },
+  "integrated_graphics": {
+    "name": "Intel Arc Graphics (Xe-LPG)",
+    "architecture": "Alchemist Xe-LPG",
+    "process_node": "TSMC N6",
+    "compute_units": 3,
+    "shaders": 384,
+    "base_freq_ghz": 0.3,
+    "max_freq_ghz": 1.9,
+    "max_displays": 4,
+    "max_memory_gb": 8,
+    "directx": 12,
+    "api": {
+      "directx": 12,
+      "vulkan": 1.3,
+      "opencl": 3.0,
+      "opengl": 4.6
+    },
+    "video_engine": {
+      "h264_encode_decode": true,
+      "h265_encode_decode": true,
+      "av1_encode_decode": true,
+      "vp9_encode_decode": true,
+      "jpeg_encode_decode": true
+    }
+  },
+  "features": [
+    "Intel Hybrid Technology",
+    "AVX-VNNI",
+    "AVX-512",
+    "DLBoost 2.0",
+    "Deep Learning Boost",
+    "Intel Thread Director",
+    "Intel Speed Shift",
+    "Intel Turbo Boost 3.0",
+    "Intel SpeedStep",
+    "Intel VT-x/VT-d",
+    "Intel AES-NI",
+    "Intel SHA Extensions",
+    "Intel SGX",
+    "Intel TXT",
+    "Intel TSX",
+    "Intel FMA3",
+    "Intel BMI1/BMI2",
+    "Intel RdSeed",
+    "Intel RdRand",
+    "Intel Secure Key",
+    "Intel Platform Trust Technology",
+    "Intel Software Guard Extensions"
+  ],
+  "chipset_compatibility": [
+    "B860",
+    "H810"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Intel boxed cooler (aluminum)",
+  "production_status": "Announced"
+}

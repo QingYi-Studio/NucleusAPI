@@ -1,0 +1,84 @@
+{
+  "name": "Intel Core i7-980X",
+  "codename": "Gulftown",
+  "architecture": "x86-64",
+  "process_node": "32 nm",
+  "transistors": 1170000000,
+  "die_size_mm2": 248,
+  "package": "LGA 1366",
+  "launch_date": "2010-03-16",
+  "part_number": "SLBLZ",
+  "launch_price_usd": 999,
+  "cores": {
+    "total": 6,
+    "performance_cores": 6,
+    "efficient_cores": 0,
+    "threads": 12
+  },
+  "clock": {
+    "base_ghz": 3.33,
+    "max_boost_ghz": 3.6,
+    "base_clock_mhz": 133,
+    "multiplier": 25,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 32,
+    "l1_data_kb_per_core": 32,
+    "l1_total_kb_per_core": 64,
+    "l2_mb_total": 12,
+    "l2_mb_per_core": 2,
+    "l3_mb_total": 12
+  },
+  "tdp": {
+    "tdp_w": 130,
+    "ppt_w": 130
+  },
+  "temperature": {
+    "tjunction_max_c": 100,
+    "tcase_max_c": 72.6
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1333,
+    "max_capacity_gb": 24,
+    "channels": 3,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": null,
+  "features": [
+    "MMX",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4.1",
+    "SSE4.2",
+    "AES-NI",
+    "EIST",
+    "Intel 64",
+    "XD bit",
+    "VT-x",
+    "TSX",
+    "TXT",
+    "CLMUL",
+    "F16C",
+    "BMI1",
+    "BMI2",
+    "ABM",
+    "ADX",
+    "RdRand",
+    "5-level NPT",
+    "X2APIC"
+  ],
+  "chipset_compatibility": [
+    "X58"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Intel boxed cooler (aluminum)",
+  "production_status": "End-of-life"
+}

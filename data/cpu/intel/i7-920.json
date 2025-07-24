@@ -1,0 +1,84 @@
+{
+  "name": "Intel Core i7-920",
+  "codename": "Bloomfield",
+  "architecture": "x86-64",
+  "process_node": "45 nm",
+  "transistors": 731000000,
+  "die_size_mm2": 263,
+  "package": "LGA 1366",
+  "launch_date": "2008-11-17",
+  "part_number": "SLB9F",
+  "launch_price_usd": 284,
+  "cores": {
+    "total": 4,
+    "performance_cores": 4,
+    "efficient_cores": 0,
+    "threads": 8
+  },
+  "clock": {
+    "base_ghz": 2.66,
+    "max_boost_ghz": 2.93,
+    "base_clock_mhz": 133,
+    "multiplier": 20,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 32,
+    "l1_data_kb_per_core": 32,
+    "l1_total_kb_per_core": 64,
+    "l2_mb_total": 8,
+    "l2_mb_per_core": 2,
+    "l3_mb_total": 8
+  },
+  "tdp": {
+    "tdp_w": 130,
+    "ppt_w": 130
+  },
+  "temperature": {
+    "tjunction_max_c": 100,
+    "tcase_max_c": 72.6
+  },
+  "memory": {
+    "type": "DDR3",
+    "native_speed_mt_s": 1066,
+    "max_capacity_gb": 24,
+    "channels": 3,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "2.0",
+    "lanes": 16
+  },
+  "integrated_graphics": null,
+  "features": [
+    "MMX",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4.1",
+    "SSE4.2",
+    "AES-NI",
+    "EIST",
+    "Intel 64",
+    "XD bit",
+    "VT-x",
+    "TSX",
+    "TXT",
+    "CLMUL",
+    "F16C",
+    "BMI1",
+    "BMI2",
+    "ABM",
+    "ADX",
+    "RdRand",
+    "5-level NPT",
+    "X2APIC"
+  ],
+  "chipset_compatibility": [
+    "X58"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Intel boxed cooler (aluminum)",
+  "production_status": "End-of-life"
+}
