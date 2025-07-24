@@ -2,12 +2,15 @@ package routes
 
 import (
 	"NucleusAPI/handlers"
+	"fmt"
 	"github.com/gorilla/mux"
 )
 
-// RegisterCPURoutes 注册CPU相关路由（带限流）
+// RegisterCPURoutes 注册CPU相关路由
 func RegisterIntelRoutes(router *mux.Router) {
-	cpuRouter := router.PathPrefix("/intel").Subrouter()
+	fmt.Printf("RegisterIntelRoutes start\n")
+	intelRouter := router.PathPrefix("/intel").Subrouter()
 
-	cpuRouter.HandleFunc("/cpu/{model}", handlers.GetIntelCPUInfo).Methods("GET")
+	intelRouter.HandleFunc("/cpu/{model}", handlers.GetIntelCPUInfo).Methods("GET")
+	fmt.Printf("RegisterIntelRoutes end\n")
 }
