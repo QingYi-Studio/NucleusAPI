@@ -1,0 +1,112 @@
+{
+  "name": "Intel Core Ultra 5 225T",
+  "codename": "Arrow Lake-S",
+  "architecture": "Hybrid (Lion Cove P-core + Skymont E-core)",
+  "process_node": "TSMC N3B 3 nm",
+  "transistors": 17800000000,
+  "die_size_mm2": 243,
+  "package": "LGA-1851",
+  "launch_date": "2025-01-07",
+  "part_number": "Ultra 5-225T",
+  "launch_price_usd": 239,
+  "cores": {
+    "total": 10,
+    "performance_cores": 6,
+    "efficient_cores": 4,
+    "threads": 10
+  },
+  "clock": {
+    "base_p_core_ghz": 2.5,
+    "base_e_core_ghz": 1.9,
+    "max_boost_p_core_single_ghz": 4.9,
+    "max_boost_p_core_all_ghz": 4.7,
+    "max_boost_e_core_single_ghz": 4.4,
+    "max_boost_e_core_all_ghz": 4.4,
+    "base_clock_mhz": 100,
+    "multiplier": 25,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 64,
+    "l1_data_kb_per_p_core": 48,
+    "l1_instruction_kb_per_e_core": 64,
+    "l1_data_kb_per_e_core": 32,
+    "l2_mb_total": 18,
+    "l2_mb_per_p_cluster": 9,
+    "l2_mb_per_e_cluster": 4,
+    "l3_mb_total": 20
+  },
+  "tdp": {
+    "tdp_w": 35,
+    "ppt_w": 114
+  },
+  "temperature": {
+    "tjunction_max_c": 105
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 6400,
+    "max_capacity_gb": 192,
+    "channels": 2,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 20
+  },
+  "integrated_graphics": {
+    "name": "Intel Arc Graphics (Xe-LPG 16EU)",
+    "architecture": "Alchemist Xe-LPG",
+    "process_node": "TSMC N6",
+    "compute_units": 2,
+    "shaders": 128,
+    "base_freq_ghz": 0.3,
+    "max_freq_ghz": 1.8,
+    "max_displays": 4,
+    "max_memory_gb": 8,
+    "directx": 12,
+    "api": {
+      "directx": 12,
+      "vulkan": 1.3,
+      "opencl": 3.0,
+      "opengl": 4.6
+    },
+    "video_engine": {
+      "h264_encode_decode": true,
+      "h265_encode_decode": true,
+      "av1_encode_decode": true,
+      "vp9_encode_decode": true,
+      "jpeg_encode_decode": true
+    }
+  },
+  "neural_engine": {
+    "name": "Intel NPU 3.0",
+    "tops_int8": 13,
+    "tops_fp16": 5,
+    "max_freq_ghz": 1.8
+  },
+  "features": [
+    "Intel Hybrid Technology",
+    "AVX-VNNI",
+    "Intel DL Boost",
+    "Intel Thread Director",
+    "Intel Speed Shift",
+    "Intel Turbo Boost 3.0",
+    "Intel SpeedStep",
+    "Intel VT-x/VT-d",
+    "Intel AES-NI",
+    "Intel SHA Extensions",
+    "Intel Quick Sync Video",
+    "Intel Volume Management Device (VMD)",
+    "Intel Trusted Execution Technology",
+    "Intel Standard Manageability"
+  ],
+  "chipset_compatibility": [
+    "Z890",
+    "B860",
+    "H810"
+  ],
+  "cooler_included": true,
+  "recommended_cooler": "Intel low-profile boxed cooler",
+  "production_status": "Available"
+}

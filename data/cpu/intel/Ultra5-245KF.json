@@ -1,0 +1,85 @@
+{
+  "name": "Intel Core Ultra 5 245KF",
+  "codename": "Arrow Lake-S",
+  "architecture": "Hybrid (Lion Cove P-core + Skymont E-core)",
+  "process_node": "TSMC N3B 3 nm",
+  "transistors": 17800000000,
+  "die_size_mm2": 243,
+  "package": "LGA-1851",
+  "launch_date": "2024-10-24",
+  "part_number": "SRQCY",
+  "launch_price_usd": 294,
+  "cores": {
+    "total": 14,
+    "performance_cores": 6,
+    "efficient_cores": 8,
+    "threads": 14
+  },
+  "clock": {
+    "base_p_core_ghz": 4.2,
+    "base_e_core_ghz": 3.6,
+    "max_boost_p_core_single_ghz": 5.2,
+    "max_boost_p_core_all_ghz": 5.2,
+    "max_boost_e_core_single_ghz": 4.6,
+    "max_boost_e_core_all_ghz": 4.6,
+    "base_clock_mhz": 100,
+    "multiplier": 42,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 64,
+    "l1_data_kb_per_p_core": 48,
+    "l1_instruction_kb_per_e_core": 64,
+    "l1_data_kb_per_e_core": 32,
+    "l2_mb_total": 26,
+    "l2_mb_per_p_cluster": 12,
+    "l2_mb_per_e_cluster": 8,
+    "l3_mb_total": 24
+  },
+  "tdp": {
+    "tdp_w": 125,
+    "ppt_w": 159
+  },
+  "temperature": {
+    "tjunction_max_c": 105
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 6400,
+    "max_overclock_mt_s": 8000,
+    "max_capacity_gb": 192,
+    "channels": 2,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 20,
+    "secondary_pcie": "Gen 4 ×4"
+  },
+  "integrated_graphics": null,
+  "features": [
+    "Intel Hybrid Technology",
+    "AVX-VNNI",
+    "DLBoost 2.0",
+    "Intel Thread Director",
+    "Intel Speed Shift",
+    "Intel Turbo Boost 3.0",
+    "Intel SpeedStep",
+    "Intel VT-x/VT-d",
+    "Intel AES-NI",
+    "Intel SHA Extensions",
+    "Intel Volume Management Device (VMD)",
+    "Intel Trusted Execution Technology",
+    "Intel Standard Manageability"
+  ],
+  "chipset_compatibility": [
+    "Z890",
+    "B860",
+    "W880",
+    "Q870",
+    "H810"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "High-performance tower or liquid cooler",
+  "production_status": "Available"
+}

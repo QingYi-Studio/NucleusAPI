@@ -1,0 +1,85 @@
+{
+  "name": "Intel Core Ultra 5 230F",
+  "codename": "Arrow Lake-S",
+  "architecture": "Hybrid (Lion Cove P-core + Skymont E-core)",
+  "process_node": {
+    "cpu_cores": "TSMC N3B 3 nm",
+    "io_die": "TSMC N6 6 nm"
+  },
+  "transistors": 17800000000,
+  "die_size_mm2": 243,
+  "package": "LGA-1851",
+  "launch_date": "2025-01-07",
+  "part_number": "Core Ultra 5-230F",
+  "launch_price_usd": 199,
+  "cores": {
+    "total": 10,
+    "performance_cores": 6,
+    "efficient_cores": 4,
+    "threads": 10
+  },
+  "clock": {
+    "base_p_core_ghz": 3.4,
+    "base_e_core_ghz": 2.9,
+    "max_boost_p_core_single_ghz": 5.0,
+    "max_boost_p_core_all_ghz": 4.8,
+    "max_boost_e_core_single_ghz": 4.4,
+    "max_boost_e_core_all_ghz": 4.4,
+    "base_clock_mhz": 100,
+    "unlocked_multiplier": false
+  },
+  "cache": {
+    "l1_instruction_kb_per_p_core": 80,
+    "l1_data_kb_per_p_core": 80,
+    "l1_instruction_kb_per_e_core": 64,
+    "l1_data_kb_per_e_core": 48,
+    "l2_mb_total": 22,
+    "l2_mb_per_p_cluster": 12,
+    "l2_mb_per_e_cluster": 4,
+    "l3_mb_total": 24
+  },
+  "tdp": {
+    "tdp_w": 65,
+    "ppt_w": 121
+  },
+  "temperature": {
+    "tjunction_max_c": 105
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 6400,
+    "max_overclock_mt_s": 6400,
+    "max_capacity_gb": 192,
+    "channels": 2,
+    "ecc": false
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 20
+  },
+  "integrated_graphics": null,
+  "features": [
+    "Intel Hybrid Technology",
+    "AVX-VNNI",
+    "DLBoost 2.0",
+    "Intel Thread Director",
+    "Intel Speed Shift",
+    "Intel Turbo Boost 3.0",
+    "Intel SpeedStep",
+    "Intel VT-x/VT-d",
+    "Intel AES-NI",
+    "Intel SHA Extensions",
+    "Intel NPU 3.0 (13 TOPS INT8)",
+    "Intel Volume Management Device (VMD)",
+    "Intel Trusted Execution Technology",
+    "Intel Standard Manageability"
+  ],
+  "chipset_compatibility": [
+    "Z890",
+    "B860",
+    "H810"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "Intel boxed cooler or better",
+  "production_status": "Available"
+}
