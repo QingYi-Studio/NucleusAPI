@@ -17,6 +17,7 @@ func NewRouter() *mux.Router {
 	RegisterCPURoutes(router)   // CPU路由
 	RegisterAPURoutes(router)   // APU路由
 	RegisterIntelRoutes(router) // Intel路由
+	RegisterAMDRoutes(router)   // AMD路由
 
 	return router
 }
