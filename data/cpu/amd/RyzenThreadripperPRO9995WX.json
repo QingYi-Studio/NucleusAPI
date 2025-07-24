@@ -1,0 +1,125 @@
+{
+  "name": "AMD Ryzen Threadripper PRO 9995WX",
+  "codename": "Shimada Peak",
+  "architecture": "x86-64 (Zen 5)",
+  "process_node": {
+    "cpu_cores": "4 nm TSMC",
+    "io_die": "6 nm TSMC"
+  },
+  "transistors": 99780000000,
+  "die_size_mm2": "12x 70.6",
+  "package": "FC-LGA4844 (sTR5)",
+  "launch_date": "2025-07-23",
+  "part_number": "100-000001361",
+  "launch_price_usd": 11699,
+  "cores": {
+    "total": 96,
+    "performance_cores": 96,
+    "efficient_cores": 0,
+    "threads": 192
+  },
+  "clock": {
+    "base_ghz": 2.5,
+    "max_boost_ghz": 5.4,
+    "base_clock_mhz": 100,
+    "multiplier": 25,
+    "unlocked_multiplier": true
+  },
+  "cache": {
+    "l1_instruction_kb_per_core": 32,
+    "l1_data_kb_per_core": 32,
+    "l1_total_kb_per_core": 64,
+    "l2_mb_total": 96,
+    "l2_mb_per_core": 1,
+    "l3_mb_total": 384
+  },
+  "tdp": {
+    "tdp_w": 350,
+    "ppt_w": 350
+  },
+  "temperature": {
+    "tjunction_max_c": 95
+  },
+  "memory": {
+    "type": "DDR5",
+    "native_speed_mt_s": 6400,
+    "max_capacity_gb": 2048,
+    "channels": 8,
+    "ecc": true
+  },
+  "pcie": {
+    "version": "5.0",
+    "lanes": 128
+  },
+  "integrated_graphics": null,
+  "features": [
+    "AMD64",
+    "MMX",
+    "3DNow!",
+    "SSE",
+    "SSE2",
+    "SSE3",
+    "SSSE3",
+    "SSE4.1",
+    "SSE4.2",
+    "AVX",
+    "AVX2",
+    "AVX-512",
+    "AES-NI",
+    "FMA3",
+    "FMA4",
+    "XOP",
+    "BMI1",
+    "BMI2",
+    "ABM",
+    "ADX",
+    "RdRand",
+    "SHA",
+    "Intel VT-x",
+    "AMD-V",
+    "Turbo Core",
+    "Precision Boost",
+    "Precision Boost Overdrive",
+    "Simultaneous Multithreading",
+    "AVX-512 FMA",
+    "AVX-512 CD",
+    "AVX-512 VNNI",
+    "AVX-512 BF16",
+    "AVX-512 FP16",
+    "AVX-512 VBMI",
+    "AVX-512 VBMI2",
+    "AVX-512 VPOPCNTDQ",
+    "AVX-512 VNNI",
+    "AVX-512 BITALG",
+    "AVX-512 VP2INTERSECT",
+    "AVX-512 VPOPCNTDQ",
+    "AVX-512 VNNI",
+    "AVX-512 BITALG",
+    "AVX-512 VP2INTERSECT",
+    "AVX-512 VPOPCNTDQ",
+    "AVX-512 VNNI",
+    "AVX-512 BITALG",
+    "AVX-512 VP2INTERSECT"
+  ],
+  "chipset_compatibility": [
+    "WRX90",
+    "TRX50",
+    "Pro 695"
+  ],
+  "cooler_included": false,
+  "recommended_cooler": "High-performance liquid cooler or air cooler with strong thermal dissipation capabilities",
+  "production_status": "Active",
+  "use_case": "Workstation",
+  "benchmark_results": {
+    "cinebench_r23_single_thread": "Not Specified",
+    "cinebench_r23_multi_thread": "173452 - 186800 (with overclocking)",
+    "7zip_mips": "849221 (with overclocking)",
+    "super_pi_1m_seconds": "8.526 (with overclocking)",
+    "cinebench_r20_points": "68224 (with overclocking)",
+    "pyprime_2b_seconds": "16.076 (with overclocking)"
+  },
+  "notes": [
+    "Performance can be significantly increased with overclocking, but at the cost of higher power consumption and heat generation[^617^][^618^].",
+    "Ideal for high-performance workstations, large-scale simulations, big-data analytics, and AI model training[^619^]."
+  ]
+}
